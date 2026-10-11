@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>@charset "utf-8";
+
+:root { --bg: #f4f7fb; --card: #fff; --ink: #172033; --muted: #617089; --brand: #3157d5; --brand2: #6b45c6; --line: #e2e8f0; --good: #137547; }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { margin: 0px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+
+header { background: linear-gradient(120deg, rgb(23, 37, 84), rgb(49, 87, 213) 60%, rgb(107, 69, 198)); color: white; padding: 20px max(18px, 50% - 560px); position: sticky; top: 0px; z-index: 10; box-shadow: rgba(23, 37, 84, 0.133) 0px 5px 20px; }
+
+.brand { font-size: 1.45rem; font-weight: 800; margin: 0px 0px 10px; }
+
+.brand span { color: rgb(199, 210, 254); }
+
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+
+nav a { color: white; text-decoration: none; padding: 7px 11px; border-radius: 9px; font-size: 0.92rem; }
+
+nav a:hover { background: rgba(255, 255, 255, 0.14); }
+
+main { max-width: 1120px; margin: auto; padding: 22px 16px 50px; }
+
+.hero { padding: 35px 26px; border-radius: 22px; background: linear-gradient(120deg, rgb(224, 231, 255), rgb(245, 243, 255)); margin: 8px 0px 22px; }
+
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.15; margin: 0px 0px 10px; }
+
+.hero p { max-width: 720px; color: rgb(63, 77, 104); }
+
+.btn, button { display: inline-block; background: var(--brand); color: rgb(255, 255, 255); border: 0px; border-radius: 10px; padding: 10px 15px; font-weight: 700; text-decoration: none; cursor: pointer; }
+
+.btn.secondary { background: rgb(255, 255, 255); color: var(--brand); border: 1px solid rgb(199, 210, 254); }
+
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 17px; padding: 22px; margin: 18px 0px; box-shadow: rgba(24, 33, 59, 0.03) 0px 5px 18px; }
+
+.panel h2 { margin: 0px 0px 6px; }
+
+.muted, .small { color: var(--muted); font-size: 0.94rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 16px; }
+
+.card { border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: rgb(255, 255, 255); }
+
+.card h3 { margin: 0px 0px 6px; }
+
+.tag { display: inline-block; background: rgb(238, 242, 255); color: rgb(53, 73, 165); border-radius: 20px; padding: 3px 9px; font-size: 0.78rem; font-weight: 700; margin: 0px 5px 8px 0px; }
+
+input, select, textarea { font: inherit; width: 100%; padding: 10px 12px; border: 1px solid rgb(203, 213, 225); border-radius: 9px; background: rgb(255, 255, 255); margin: 5px 0px 12px; }
+
+label { font-weight: 650; display: block; }
+
+.row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+
+.material-card p { margin: 0.35rem 0px; }
+
+.material-card details { margin-top: 10px; }
+
+.material-card summary { cursor: pointer; color: var(--brand); font-weight: 700; }
+
+.download { background: rgb(232, 247, 238); color: rgb(18, 97, 58); border: 1px solid rgb(184, 227, 202); padding: 7px 10px; border-radius: 8px; cursor: pointer; font-weight: 700; }
+
+.question { padding: 12px 0px; border-bottom: 1px solid var(--line); }
+
+.question label { font-weight: 400; margin: 6px 0px; }
+
+.question input { width: auto; margin-right: 7px; }
+
+.result { font-weight: 800; margin-top: 12px; }
+
+.list { padding-left: 22px; }
+
+.list li { margin: 6px 0px; }
+
+.notice { padding: 12px 14px; border-radius: 10px; background: rgb(255, 247, 221); color: rgb(112, 83, 20); }
+
+.item { padding: 10px; border: 1px solid var(--line); border-radius: 10px; margin: 8px 0px; }
+
+footer { text-align: center; padding: 25px; color: var(--muted); }
+
+@media (max-width: 600px) {
+  header { padding: 15px; }
+  nav a { font-size: 0.82rem; padding: 6px 8px; }
+  .panel { padding: 16px; }
+  .hero { padding: 25px 18px; }
+}
+
+.page-hidden { display: none !important; }
+
+.page-back { margin: 0px 0px 14px; }
+
+.page-heading { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.home-action-card { display: block; color: inherit; text-decoration: none; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+
+.home-action-card:hover, .home-action-card:focus-visible { transform: translateY(-2px); border-color: rgb(165, 180, 252); box-shadow: rgba(49, 87, 213, 0.133) 0px 8px 22px; outline: none; }
+
+.home-action-card .card-action { display: inline-block; margin-top: 8px; color: var(--brand); font-weight: 750; }
+
+#paperViewer { background: rgb(248, 250, 255); border: 1px solid var(--line); padding: 18px; border-radius: 14px; }</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Student Help Hub — Upgraded">
+<meta property="og:description" content="Published on Deployhtml — drop an HTML file, get a live URL.">
+<meta property="og:url" content="https://soft-glade-gotd.deployhtml.com">
+<meta property="og:site_name" content="Deployhtml">
+<meta property="og:image" content="https://deployhtml.com/og-card.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Student Help Hub — Upgraded">
+<meta name="twitter:description" content="Published on Deployhtml — drop an HTML file, get a live URL.">
+<meta name="twitter:image" content="https://deployhtml.com/og-card.png?v=2">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Help Hub — Upgraded</title>
+
+</head>
+<body>
+
+<style>
+#loginGate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#e8f1ff,#f6f8fc)}
+.login-card{width:min(100%,430px);background:#fff;border-radius:20px;padding:30px;box-shadow:0 16px 45px #18345b22}
+.login-card h1{margin:0 0 8px;font-size:28px}.login-card p{color:#667085}.login-card label{display:block;margin:14px 0 6px;font-weight:600}.login-card input{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;box-sizing:border-box}.login-actions{display:flex;gap:10px;margin-top:18px}.login-actions button{flex:1}.login-error{color:#b42318!important;min-height:20px;font-size:14px}.login-note{font-size:12px;line-height:1.5}.hidden-app{display:none!important}
+</style>
+<section id="loginGate"><div class="login-card"><div class="brand">📘 Student <span>Help Hub</span></div><h1 id="loginTitle">Welcome back!</h1><p id="loginSubtitle">Login karke hi Student Help Hub open karein.</p>
+<form id="loginForm"><label for="loginEmail">Email / Username</label><input id="loginEmail" autocomplete="username" required placeholder="Enter email or username"><label for="loginPassword">Password</label><input id="loginPassword" type="password" autocomplete="current-password" required minlength="4" placeholder="Enter password"><div class="login-actions"><button type="submit" id="loginSubmit">Login</button></div><p id="loginError" class="login-error" role="alert"></p></form>
+<p class="login-note">Login details: Username <b>krish Rana</b> · Password <b>13250431</b>. Note: standalone HTML mein credentials technically source code se dekhe ja sakte hain; real security ke liye backend login zaroori hai.</p></div></section>
+<div id="appShell" class="hidden-app">
+
+<header>
+  <div class="brand">📘 Student <span>Help Hub</span></div>
+  <nav>
+    <a href="https://soft-glade-gotd.deployhtml.com/#home">Home</a><a href="https://soft-glade-gotd.deployhtml.com/#study">Study Notes</a><a href="https://soft-glade-gotd.deployhtml.com/#quiz">Quick Quiz</a><a href="https://soft-glade-gotd.deployhtml.com/#quiz2">Exam Quiz</a><a href="https://soft-glade-gotd.deployhtml.com/#papers">Question Papers</a><a href="https://soft-glade-gotd.deployhtml.com/#syllabus">Syllabus</a><a href="https://soft-glade-gotd.deployhtml.com/#videos">Video Links</a><a href="https://soft-glade-gotd.deployhtml.com/#lost">Lost &amp; Found</a><a href="https://soft-glade-gotd.deployhtml.com/#about">About</a>
+  </nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <h1>Your campus learning space.</h1>
+  <p>Find quick computer-science notes, revise important questions, practise an MCQ quiz, and explore a sample semester study plan—all in one place.</p>
+  <a class="btn" href="https://soft-glade-gotd.deployhtml.com/#study">Explore study notes</a>
+  <a class="btn secondary" href="https://soft-glade-gotd.deployhtml.com/#quiz">Take a quiz</a>
+</section>
+<section class="panel">
+<h2>What you can do here</h2>
+<div class="grid">
+<a class="card home-action-card" href="https://soft-glade-gotd.deployhtml.com/#study"><h3>📚 Study Notes</h3><p class="muted">Short revision notes with key concepts.</p><span class="card-action">Open Study Notes →</span></a>
+<a class="card home-action-card" href="https://soft-glade-gotd.deployhtml.com/#quiz"><h3>📝 Quiz Practice</h3><p class="muted">MCQs with instant score and feedback.</p><span class="card-action">Start Quick Quiz →</span></a>
+<a class="card home-action-card" href="https://soft-glade-gotd.deployhtml.com/#papers"><h3>📄 Exam Preparation</h3><p class="muted">Sample paper format and important questions.</p><span class="card-action">Open Question Papers →</span></a>
+<a class="card home-action-card" href="https://soft-glade-gotd.deployhtml.com/#lost"><h3>🔎 Campus Help</h3><p class="muted">Save and search sample Lost &amp; Found posts on this device.</p><span class="card-action">Open Campus Help →</span></a>
+</div>
+</section>
+
+<section class="panel page-hidden" id="study"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Study Materials &amp; Notes</h2><p class="muted">Choose a topic to read the summary. Use “Download notes” to save a simple text file.</p>
+<div class="row"><div><label for="subjectFilter">Filter by subject</label><select id="subjectFilter"><option value="all">All subjects</option><option>Web Development</option><option>Programming</option><option>Database</option><option>Computer Fundamentals</option><option>Networking</option></select></div><div><label for="noteSearch">Search notes</label><input id="noteSearch" placeholder="Search HTML, DBMS, Python..."></div></div>
+<div class="grid" id="materials"><article class="card material-card"><span class="tag">Web Development</span><h3>HTML Basics</h3><p>HTML structures web pages using elements and tags.</p><details><summary>Read notes</summary><p>HTML (HyperText Markup Language) defines a webpage structure. Core tags: h1–h6 headings, p paragraphs, a links, img images, ul/ol lists, table tables, form forms, input fields and button controls. Example: </p><h1>My College</h1><p>Welcome!</p>. Use semantic tags such as header, nav, main, section and footer. Remember: most elements have opening and closing tags; img and input are void elements.<p></p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Web Development</span><h3>CSS Basics</h3><p>CSS controls colours, spacing, layout and typography.</p><details><summary>Read notes</summary><p>CSS (Cascading Style Sheets) styles HTML. Selectors: p targets tags, .card targets a class and #header targets an ID. Common properties include color, background, margin, padding, border, font-size and display. The box model contains content, padding, border and margin. Flexbox is useful for one-dimensional layouts; Grid is useful for rows and columns. Example: .card { padding: 16px; border-radius: 10px; }. Use media queries for responsive layouts.</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Web Development</span><h3>JavaScript Basics</h3><p>JavaScript adds logic and interactivity to a webpage.</p><details><summary>Read notes</summary><p>JavaScript adds behaviour to webpages. Learn const and let, strings and numbers, arrays, if/else, loops and functions. Example: const add = (a,b) =&gt; a+b;. The DOM lets JavaScript read or change HTML elements. Event listeners react to clicks and form submissions. Validate user input, and never trust browser-side checks as security for a real server.</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Programming</span><h3>Python Basics</h3><p>Python is a readable general-purpose programming language.</p><details><summary>Read notes</summary><p>Python uses indentation to define code blocks. Basic types include int, float, str and bool. Collections include list, tuple, set and dict. Example: for n in [1, 2, 3]: print(n). Use if/elif/else for decisions and def to create functions. Lists are ordered and mutable; tuples are ordered and immutable. Handle expected errors with try/except. Practise loops, functions and small programs.</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Programming</span><h3>C Programming Basics</h3><p>C introduces structured programming and low-level concepts.</p><details><summary>Read notes</summary><p>A C program commonly includes #include <stdio.h> and int main(void). Learn int, char, float and double, operators, printf/scanf, if/else, loops, arrays, strings and functions. Arrays store same-type elements in contiguous positions. A pointer stores a memory address; use pointers carefully. Example: int total = 0; for (int i=1; i&lt;=5; i++) total += i;. End statements with semicolons and compile to catch errors.</stdio.h></p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Database</span><h3>DBMS &amp; SQL</h3><p>A DBMS stores and manages structured data.</p><details><summary>Read notes</summary><p>A database is an organized collection of data. A DBMS helps create, read, update and manage it. A primary key uniquely identifies a row; a foreign key links tables. SQL examples: SELECT * FROM Students; INSERT INTO Students(id,name) VALUES (1,'Aman');</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Database</span><h3>Database Normalization</h3><p>Normalization reduces unnecessary duplication in tables.</p><details><summary>Read notes</summary><p>Normalization organizes tables to reduce repeated data and insertion, update or deletion anomalies. 1NF requires each field to hold an atomic value and no repeating groups. 2NF removes partial dependency on part of a composite key. 3NF removes transitive dependency of non-key attributes. Use primary/foreign keys to model relationships, and draw an ER diagram before designing complex databases.</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Networking</span><h3>Computer Networks</h3><p>Networks connect devices to share data and resources.</p><details><summary>Read notes</summary><p>Networks connect devices to exchange information. LAN covers a limited local area; WAN covers large geographic areas. OSI layers from bottom to top: Physical, Data Link, Network, Transport, Session, Presentation, Application. IP addresses identify network interfaces; DNS maps domain names to addresses. TCP provides reliable, ordered delivery; UDP has lower overhead but does not guarantee delivery. A router connects networks; a switch commonly connects devices within a LAN.</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Computer Fundamentals</span><h3>Operating System</h3><p>An operating system manages hardware and application resources.</p><details><summary>Read notes</summary><p>An operating system manages processes, memory, files, devices, security and user interaction. Examples include Windows, Linux, macOS and Android. A process is a running program; scheduling shares CPU time. RAM holds active data, while virtual memory uses storage to support memory needs. File systems organize files and folders; permissions control access.</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Computer Fundamentals</span><h3>Computer Fundamentals</h3><p>Computers process input into output using hardware and software.</p><details><summary>Read notes</summary><p>The information-processing cycle is input, processing, output and storage. Hardware includes CPU, RAM, storage and input/output devices. Software includes system software and applications. The CPU contains the control unit and arithmetic logic unit. RAM is volatile; SSD storage is non-volatile. Data units: 8 bits = 1 byte. Back up important files and use strong, unique passwords.</p></details><p><button class="download">Download notes</button></p></article><article class="card material-card"><span class="tag">Computer Fundamentals</span><h3>Computer Security Basics</h3><p>Learn safe habits for accounts, devices and data.</p><details><summary>Read notes</summary><p>Use strong unique passwords and a password manager where possible. Turn on multi-factor authentication. Install updates, back up important files and download software from trusted sources. Phishing messages try to trick users into sharing information; verify unexpected requests through a separate trusted channel. Never share one-time codes or passwords.</p></details><p><button class="download">Download notes</button></p></article></div>
+</section>
+
+<section class="panel page-hidden" id="quiz"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Quick Quiz — 10 Questions</h2><p class="muted">Press “Start Quick Quiz” to show the questions. Choose one of the four options for every question, then submit to see your marks and correct answers.</p>
+<button type="button" id="startQuiz">Start Quick Quiz</button>
+<div class="result" id="quizResult" aria-live="polite"></div>
+</section>
+<section class="panel page-hidden" id="quiz2"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Exam Practice Quiz — 10 Questions</h2><p class="muted">A second mixed-subject practice quiz.</p>
+<form id="quizForm2"><div id="questions2"><div class="question"><p><b>1. Which tag creates a link in HTML?</b></p><label><input type="radio" name="q2_0" value="0"> &lt;a&gt;</label><label><input type="radio" name="q2_0" value="1"> &lt;p&gt;</label><label><input type="radio" name="q2_0" value="2"> &lt;div&gt;</label></div><div class="question"><p><b>2. Which CSS property changes text colour?</b></p><label><input type="radio" name="q2_1" value="0"> color</label><label><input type="radio" name="q2_1" value="1"> font-style-only</label><label><input type="radio" name="q2_1" value="2"> href</label></div><div class="question"><p><b>3. Which Python type stores key-value pairs?</b></p><label><input type="radio" name="q2_2" value="0"> dict</label><label><input type="radio" name="q2_2" value="1"> list only</label><label><input type="radio" name="q2_2" value="2"> int</label></div><div class="question"><p><b>4. Which C function prints formatted output?</b></p><label><input type="radio" name="q2_3" value="0"> printf</label><label><input type="radio" name="q2_3" value="1"> input</label><label><input type="radio" name="q2_3" value="2"> echoHTML</label></div><div class="question"><p><b>5. What does DBMS stand for?</b></p><label><input type="radio" name="q2_4" value="0"> Database Management System</label><label><input type="radio" name="q2_4" value="1"> Digital Basic Memory Setup</label><label><input type="radio" name="q2_4" value="2"> Data Browser Mode Screen</label></div><div class="question"><p><b>6. Which key uniquely identifies each row?</b></p><label><input type="radio" name="q2_5" value="0"> Primary key</label><label><input type="radio" name="q2_5" value="1"> Foreign key only</label><label><input type="radio" name="q2_5" value="2"> Sort key</label></div><div class="question"><p><b>7. Which OSI layer handles routing?</b></p><label><input type="radio" name="q2_6" value="0"> Network</label><label><input type="radio" name="q2_6" value="1"> Physical</label><label><input type="radio" name="q2_6" value="2"> Presentation</label></div><div class="question"><p><b>8. Which memory is volatile?</b></p><label><input type="radio" name="q2_7" value="0"> RAM</label><label><input type="radio" name="q2_7" value="1"> SSD</label><label><input type="radio" name="q2_7" value="2"> Blu-ray disc</label></div><div class="question"><p><b>9. Which SQL command changes existing rows?</b></p><label><input type="radio" name="q2_8" value="0"> UPDATE</label><label><input type="radio" name="q2_8" value="1"> CREATE PAGE</label><label><input type="radio" name="q2_8" value="2"> STYLE</label></div><div class="question"><p><b>10. What is phishing?</b></p><label><input type="radio" name="q2_9" value="0"> A deceptive attempt to steal information</label><label><input type="radio" name="q2_9" value="1"> A backup method</label><label><input type="radio" name="q2_9" value="2"> A database key</label></div></div><button type="submit">Check score</button> <button type="button" class="btn secondary" id="resetQuiz2">Reset quiz</button></form>
+<div class="result" id="quizResult2" aria-live="polite"></div>
+</section>
+
+<section class="panel page-hidden" id="papers"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Previous Year Question Papers</h2>
+<p class="notice"><b>Note:</b> Abhi yahan practice/sample papers hain, verified official previous-year papers nahi. Official papers add karne ke liye university/college aur course ka naam chahiye.</p>
+<div class="grid">
+<div class="card"><span class="tag">Practice Paper 1</span><h3>Computer Fundamentals</h3><p>Suggested practice: 10 short questions + 5 long questions.</p><button>View Paper</button></div>
+<div class="card"><span class="tag">Practice Paper 2</span><h3>Web Development</h3><p>Suggested practice: HTML, CSS, JavaScript and responsive design.</p><button>View Paper</button></div>
+<div class="card"><span class="tag">Practice Paper 3</span><h3>DBMS</h3><p>Suggested practice: keys, normalization, SQL and transactions.</p><button>View Paper</button></div>
+<div class="card"><span class="tag">Practice Paper 4</span><h3>Python Programming</h3><p>Practice variables, loops, functions, lists and dictionaries.</p><button>View Paper</button></div>
+<div class="card"><span class="tag">Practice Paper 5</span><h3>Computer Networks</h3><p>Practice OSI model, IP, DNS, TCP/UDP and network devices.</p><button>View Paper</button></div>
+<div class="card"><span class="tag">Practice Paper 6</span><h3>Operating Systems</h3><p>Practice process, memory, files and resource management.</p><button>View Paper</button></div>
+</div>
+
+</section>
+
+<section class="panel page-hidden" id="syllabus"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Complete Subject Syllabus</h2><p class="muted">Click “View full topics” under a subject. This is a general computer-science syllabus; confirm the exact units with your college.</p>
+<div class="grid">
+<div class="card"><h3>Programming (C / Python)</h3><details><summary>View full topics</summary><ul class="list"><li>Algorithms and flowcharts</li><li>Variables, data types and operators</li><li>Input/output and type conversion</li><li>Conditions and loops</li><li>Arrays, strings, lists, tuples and dictionaries</li><li>Functions, parameters and scope</li><li>Pointers in C; exceptions in Python</li><li>File handling and debugging</li></ul></details></div>
+<div class="card"><h3>Web Development</h3><details><summary>View full topics</summary><ul class="list"><li>Internet, websites and HTTP basics</li><li>HTML structure, headings, links and images</li><li>Lists, tables, forms and semantic elements</li><li>CSS selectors, cascade and box model</li><li>Flexbox, Grid and responsive design</li><li>JavaScript variables, functions and events</li><li>DOM and form validation</li><li>Accessibility and web safety</li></ul></details></div>
+<div class="card"><h3>Database Systems (DBMS)</h3><details><summary>View full topics</summary><ul class="list"><li>Database concepts and DBMS architecture</li><li>Relational tables, rows and columns</li><li>ER diagrams and relationships</li><li>Primary, candidate and foreign keys</li><li>SQL SELECT, INSERT, UPDATE and DELETE</li><li>WHERE, ORDER BY, GROUP BY and joins</li><li>Functional dependencies and 1NF–3NF</li><li>Transactions, ACID properties and security</li></ul></details></div>
+<div class="card"><h3>Computer Networks</h3><details><summary>View full topics</summary><ul class="list"><li>Network types, topologies and media</li><li>OSI and TCP/IP models</li><li>Ethernet, switches, routers and access points</li><li>IP addressing and subnet basics</li><li>TCP, UDP, ports and common protocols</li><li>DNS, DHCP and HTTP/HTTPS</li><li>Wireless networks and troubleshooting</li><li>Firewalls and network safety</li></ul></details></div>
+<div class="card"><h3>Operating System</h3><details><summary>View full topics</summary><ul class="list"><li>OS purpose, types and architecture</li><li>Processes, threads and scheduling</li><li>Memory management and virtual memory</li><li>Files, directories and file systems</li><li>Devices, drivers and input/output</li><li>Deadlocks and resource allocation basics</li><li>User permissions and security</li></ul></details></div>
+<div class="card"><h3>Computer Fundamentals</h3><details><summary>View full topics</summary><ul class="list"><li>Computer history and generations</li><li>Input, output, processing and storage</li><li>CPU, ALU, control unit and memory</li><li>Hardware, system software and applications</li><li>Number systems and data units</li><li>Internet, email, cyber safety and backups</li></ul></details></div>
+</div>
+</section>
+
+<section class="panel page-hidden" id="important"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Important Questions for Revision</h2>
+<div class="grid">
+<div class="card"><h3>Programming</h3><ol class="list"><li>Explain variables and data types with examples.</li><li>Differentiate between a loop and a conditional statement.</li><li>What is a function? Why is it useful?</li></ol></div>
+<div class="card"><h3>DBMS</h3><ol class="list"><li>Explain primary key and foreign key.</li><li>What is normalization?</li><li>Write basic SELECT, INSERT and UPDATE SQL queries.</li></ol></div>
+<div class="card"><h3>Web Development</h3><ol class="list"><li>Explain the basic structure of an HTML document.</li><li>Differentiate between class and ID in CSS.</li><li>How does JavaScript make a page interactive?</li></ol></div>
+</div>
+</section>
+
+<section class="panel page-hidden" id="videos"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Video Learning Links</h2><p class="muted">These buttons open a YouTube search for the topic, so you can choose a lesson that matches your course.</p>
+<div class="grid">
+<div class="card"><h3>HTML &amp; CSS</h3><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=HTML+CSS+beginner+tutorial">Find lessons</a></div>
+<div class="card"><h3>Python Programming</h3><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Python+programming+beginner+tutorial">Find lessons</a></div>
+<div class="card"><h3>DBMS &amp; SQL</h3><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=DBMS+SQL+beginner+tutorial">Find lessons</a></div>
+<div class="card"><h3>Computer Networks</h3><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=computer+networks+basics+tutorial">Find lessons</a></div>
+</div>
+</section>
+
+<section class="panel page-hidden" id="lost"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>Lost &amp; Found</h2><p class="muted">Demo only: posts are saved in this browser on this device. Do not add phone numbers, addresses or other private information.</p>
+<form id="itemForm">
+<div class="row"><div><label for="kind">Report type</label><select id="kind"><option>Lost</option><option>Found</option></select></div><div><label for="itemName">Item name</label><input id="itemName" maxlength="60" required="" placeholder="e.g. Blue notebook"></div></div>
+<label for="place">General location</label><input id="place" maxlength="80" required="" placeholder="e.g. Library or classroom">
+<label for="details">Description (optional)</label><textarea id="details" rows="2" maxlength="250" placeholder="Brief description"></textarea><button type="submit">Add item</button>
+</form>
+<label for="searchItems">Search saved posts</label><input id="searchItems" placeholder="Search item or location">
+<div id="itemsList"><p class="muted">No matching saved posts.</p></div>
+</section>
+
+<section class="panel page-hidden" id="about"><a class="btn secondary page-back page-back-home page-hidden" href="https://soft-glade-gotd.deployhtml.com/#home">← Back to Home</a>
+<h2>About This Project</h2><p>Student Help Hub is a front-end student support project made with HTML, CSS and JavaScript. It includes study notes, quiz practice, sample exam questions, syllabus planning, learning links and a Lost &amp; Found demo.</p>
+<p class="notice">Technical limitation: this is a standalone demo with no server, student login or shared database. Quiz scores are calculated in the browser; Lost &amp; Found posts stay on this device only. To share posts across students, a secure backend/database would be needed.</p>
+</section>
+</main>
+<footer>© 2026 Student Help Hub · Student project demo</footer>
+
+
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:2147483647;display:flex;justify-content:center;pointer-events:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+  <div dir="ltr" lang="en" style="pointer-events:auto;margin:0 0 10px;padding:6px 12px;background:rgba(11,13,18,.85);color:#e6e8ee;border:1px solid #2c3445;border-radius:999px;font-size:12px;line-height:1;backdrop-filter:blur(6px)">
+    Hosted on Deployhtml —
+    <a href="https://deployhtml.com/report?slug=soft-glade-gotd" style="color:#7aa2ff;text-decoration:none">Report abuse</a>
+    &nbsp;·&nbsp;
+    <a href="https://deployhtml.com/?remix=soft-glade-gotd" style="color:#7aa2ff;text-decoration:none">Remix</a>
+  </div>
+</div>
+
+</div>
+<script>
+(function(){
+ const gate=document.getElementById('loginGate'), app=document.getElementById('appShell'), form=document.getElementById('loginForm');
+ const email=document.getElementById('loginEmail'), pass=document.getElementById('loginPassword'), error=document.getElementById('loginError');
+ function openApp(user){gate.classList.add('hidden-app');app.classList.remove('hidden-app');if(!document.getElementById('logoutButton')){const b=document.createElement('button');b.id='logoutButton';b.textContent='Logout';b.className='btn secondary';b.style.margin='8px';b.onclick=()=>{sessionStorage.removeItem('shhLoggedIn');sessionStorage.removeItem('shhUser');location.hash='';location.reload()};document.querySelector('header').appendChild(b);}}
+ if(sessionStorage.getItem('shhLoggedIn')==='yes' && sessionStorage.getItem('shhUser')==='krish rana') openApp('krish rana');
+ form.addEventListener('submit',function(e){e.preventDefault();const u=email.value.trim().toLowerCase(), pw=pass.value;if(u==='krish rana' && pw==='13250431'){sessionStorage.setItem('shhLoggedIn','yes');sessionStorage.setItem('shhUser','krish rana');error.textContent='';openApp('krish rana');}else{error.textContent='Username ya password galat hai. Dobara try karein.';}});
+})();
+</script>
+</body></html>
